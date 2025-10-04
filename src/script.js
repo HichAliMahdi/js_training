@@ -1,9 +1,19 @@
 let wordTyped = "guess" 
 let userWord = prompt("Enter a word:")
 
-if (wordTyped === userWord) 
-    console.log("Congratulations! you have typed the correct word.\n")
-else
-    console.log("Wrong! Better luck next time.\n")
-
-console.log(userWord)
+switch (userWord){
+    case wordTyped:
+        console.log("Congratulations! you have typed the correct word.\n")
+        break
+    case "idiot":
+        console.log("Be polite!")
+        break
+    case "dumb":
+        console.log("Be polite!")
+        break
+    case "vilain":
+        console.log("Be polite!")
+        break
+    default:
+        console.log("You made a typo error.")
+}
