@@ -7,7 +7,7 @@ const ResumeData = {
         email: "hichem.alimahdi@gmail.com",
         phNbr: "+49 163 241 0341"
     },
-    experiece: [
+    experience: [
         {
             company: "DJEZZY OTA",
             location: "Algiers",
@@ -22,7 +22,7 @@ const ResumeData = {
             ]
         },
         {
-            company: "SAARL DATAGIX",
+            company: "SARL DATAGIX",
             location: "Algiers",
             country: "Algeria",
             period: "Jul 2020 - Mar 2024",
@@ -34,6 +34,42 @@ const ResumeData = {
                 "Delivered user support and created technical documentation.",
                 "Maintained 99%+ system uptime across multiple client environments."
             ]
+        },
+    ],
+    skills: [
+        {
+            field: "Systems & Virtualization",
+            skill: "Linux (Debian, Ubuntu), Windows Server, Proxmox, VMware ESXi"
+        },
+        {
+            field: "Cloud & Infrastructure",
+            skill: "Ansible, Terraform (basic), Docker, BigBlueButton, NGINX, SSH, DNS, Zabbix"
+        },
+        {
+            field: "Networking",
+            skill: "TCP/IP, Routing & Switching, Firewall (iptables, UFW), VPN (OpenVPN, WireGuard),VLANs, DHCP, NAT"
+        },
+        {
+            field: "security",
+            skill: "System hardening, Patch management, Vulnerability assessment, Fail2Ban,Backup/Restore strategies"
+        },
+        {
+            field: "DevOps & Automation",
+            skill: [
+                "Docker: Containerized applications and development environments",
+                "CI/CD: Experience with GitLab CI, GitHub Actions, basic Jenkins",
+                "Automation: Shell scripting, Ansible playbooks for provisioning and configuration",
+                "Version Control & Collaboration: Git, GitHub, GitLab",
+                "Monitoring & Logging: Zabbix, basic Grafana, journald, logrotate"
+            ]
+        },
+        {
+            field: "Programming & Development",
+            skill: "C, C++, Python, PHP, JavaScript, Laravel."
+        },
+        {
+            field: "Languages",
+            skill: "English (C1), Arabic (Native), French (C2)"
         },
     ]
 }
