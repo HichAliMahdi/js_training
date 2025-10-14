@@ -71,5 +71,48 @@ const ResumeData = {
             field: "Languages",
             skill: "English (C1), Arabic (Native), French (C2)"
         },
-    ]
-}
+    ],
+    professionalCertifications: [
+        "3CX Certified Engineer (Basic, Intermediate, Advanced V18)",
+        "ESET Technical Certification Level 1",
+        "cPanel & WHM Administrator Certification",
+        "cPanel & WHM Sales Professional (CPSP)",
+        "cPanel & WHM Professional Certification (CPP)",
+        "cPanel LiteSpeed Certification",
+        "Fortinet NSE 1, 2, 3 Certifications",
+        "ICT-TOWERS Quality of Service Fundamentals"
+    ],
+    education: [
+        {
+            school: "42 Heilbronn School",
+            location: "Germany",
+            grade: "Software Development Program",
+            field: "Computer science",
+            period: "2024 – Present",
+            projects: " libft, get_next_line, ft_printf, pipex, so_long, minishell, push_swap, cub3d, netpractice, CPP04, ft_irc, CPP09."
+        },
+        {
+            school: "University of Science and Technology (USTHB)",
+            location: "Algeria",
+            grade: "Master's Degree",
+            field: "Telecommunications & Systems",
+            period: "2018 - 2020",
+            thesis: "Reduction and Evaluation of Blur Effect in Images"
+        },
+    ],
+    softSkills: [
+        "Project management and risk analysis",
+        "Operational monitoring and performance optimization",
+        "Strong diagnostic and problem-solving skills",
+        "Excellent interpersonal communication and training ability",
+        "Collaborative mindset in cross-functional teams"
+    ],
+    interests: [
+        "IT innovation",
+        "Cybersecurity trends",
+        "Cinema & Film",
+        "Sports & Fitness",
+        "Sustainability",
+        "Future technologies"
+    ],
+};
