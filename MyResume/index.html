@@ -4,7 +4,6 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
 	<title>Resume — Hichem ALI MAHDI</title>
-	<!-- Optional: create ./css/style.css for styling -->
 	<link rel="stylesheet" href="./css/style.css" />
 </head>
 <body>
@@ -16,11 +15,54 @@
 	<!-- Load your renderer; expects js/app.js to import ./js/data.js (export default ResumeData) -->
 	<script type="module" src="./js/app.js"></script>
 
-	<!-- Minimal inline styles to avoid a blank page if css file is missing -->
+	<!-- Inline fallback styles (keeps page readable if ./css/style.css wasn't loaded) -->
 	<style>
 		.visually-hidden{position:absolute!important;height:1px;width:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 		body{font-family:system-ui,Segoe UI,Roboto,Arial,Helvetica,sans-serif;margin:20px;background:#f6f7fb;color:#1a202c}
 		.container{max-width:900px;margin:0 auto}
+		/* server warning overlay */
+		#server-warning{display:none;position:fixed;inset:16px;z-index:9999;background:rgba(10,10,20,0.85);color:#fff;padding:20px;border-radius:10px;max-width:760px;margin:auto;left:0;right:0;font-family:monospace}
+		#server-warning h2{margin-top:0;color:#ffdca3}
+		#server-warning pre{background:rgba(255,255,255,0.06);padding:10px;border-radius:6px;overflow:auto}
+		#server-warning button{margin-top:10px;padding:8px 12px;border:0;border-radius:6px;background:#2b6cb0;color:#fff;cursor:pointer}
 	</style>
+
+	<!-- Warning shown when opened via file:// or when module fetch is blocked by CORS -->
+	<div id="server-warning" role="alert" aria-live="polite">
+		<h2>Local file access blocked</h2>
+		<p>If you opened this file directly (file://), your browser (Chrome) may block loading local module scripts and external files.</p>
+		<p>To view this page correctly, start a simple local HTTP server from the project folder and open http://localhost:8000/ in your browser.</p>
+		<pre>
+cd /home/hali-mah/Desktop/js_training/MyResume
+# Python 3:
+python -m http.server 8000
+# or Node (if installed):
+npx http-server -p 8000
+		</pre>
+		<p>Alternatively, open the page in Firefox (which is more permissive for local modules) or serve the folder via your editor's live-server.</p>
+		<button id="dismiss-warning">Dismiss</button>
+	</div>
+
+	<script>
+		(function(){
+			// Show the server warning when loaded from file:// or when origin is "null"
+			const isFileProtocol = location.protocol === 'file:' || location.origin === 'null';
+			if(isFileProtocol){
+				document.getElementById('server-warning').style.display = 'block';
+			}
+
+			// If a module script was blocked, show the warning as well (best-effort)
+			window.addEventListener('error', (ev) => {
+				// script loading errors often have filename that includes 'js/app.js' or 'data.js'
+				if(ev && ev.filename && ev.filename.indexOf('/js/app.js') !== -1){
+					document.getElementById('server-warning').style.display = 'block';
+				}
+			});
+
+			document.getElementById('dismiss-warning').addEventListener('click', () => {
+				document.getElementById('server-warning').style.display = 'none';
+			});
+		})();
+	</script>
 </body>
 </html>
