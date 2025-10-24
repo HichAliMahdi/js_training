@@ -116,3 +116,5 @@ const ResumeData = {
         "Future technologies"
     ],
 };
+
+export default ResumeData;
